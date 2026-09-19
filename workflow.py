@@ -34,7 +34,7 @@ def _call_ai(client, prompt_text, stage_name, retries=2):
     for attempt in range(retries + 1):
         try:
             response = client.models.generate_content(
-                model='gemini-2.5-flash',
+                model='gemini-3.6-flash',
                 contents=prompt_text
             )
             if not response or not getattr(response, "text", None):
