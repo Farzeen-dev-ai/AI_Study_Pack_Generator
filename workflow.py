@@ -28,7 +28,7 @@ def _extract_json(text):
             return json.loads(match.group(0))
         raise
 
-def _call_ai(client, prompt_text, stage_name, retries=2):
+def _call_ai(client, prompt_text, stage_name, retries=5):
     """Call Gemini using the new google-genai SDK structure."""
     last_error = None
     for attempt in range(retries + 1):
