@@ -169,7 +169,10 @@ def generate_study_pack(
 
     genai.configure(api_key=api_key.strip())
 
-    model = genai.GenerativeModel("gemini-2.5-flash")
+    client.interactions.create(
+    model="gemini-3.6-flash",
+    input=prompt_text
+)
 
     user_input = {
         "topic": topic.strip(),
